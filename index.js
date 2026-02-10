@@ -1204,8 +1204,8 @@ app.post("/chat", async (req, res) => {
     if(rgd == 1){
 
       let rsp = req.body.ListId;
-      let rfd = await redis.hget("whatsapp_state",a);
-      let i = Number(rfd);
+      //let rfd = await redis.hget("whatsapp_state",a);
+      //let i = Number(rfd);
 
       if(rsp == 'one' || rsp == 'two'){
 
@@ -1222,7 +1222,7 @@ app.post("/chat", async (req, res) => {
           
         }
 
-        await redis.hset("whatsapp_state",req.body.From,1);
+        //await redis.hset("whatsapp_state",req.body.From,1);
 
         
 
@@ -1253,7 +1253,7 @@ app.post("/chat", async (req, res) => {
           await redis.hset("budget",req.body.From,"8cr+");
         }
 
-        await redis.hset("whatsapp_state",req.body.From,2);
+        //await redis.hset("whatsapp_state",req.body.From,2);
 
         await twilioClient.messages.create({
           from:req.body.To,
@@ -1270,7 +1270,7 @@ app.post("/chat", async (req, res) => {
 
           let i = await redis.hget("budget",req.body.From);
           if(i == "1-3cr"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1280,7 +1280,7 @@ app.post("/chat", async (req, res) => {
 
           }
           else if(i == "3-5cr"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
              await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1291,7 +1291,7 @@ app.post("/chat", async (req, res) => {
           }
 
           else if(i=="5-8cr"||i=="8cr+"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1315,7 +1315,7 @@ app.post("/chat", async (req, res) => {
           let i = await redis.hget("budget",req.body.From);
 
           if(i == "1-3cr"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1325,7 +1325,7 @@ app.post("/chat", async (req, res) => {
 
           }
           else if(i == "3-5cr"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
              await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1336,7 +1336,7 @@ app.post("/chat", async (req, res) => {
           }
 
           else if(i=="5-8cr"||i=="8cr+"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1363,7 +1363,7 @@ app.post("/chat", async (req, res) => {
           let i = await redis.hget("budget",req.body.From);
 
           if(i == "1-3cr"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1373,7 +1373,7 @@ app.post("/chat", async (req, res) => {
 
           }
           else if(i == "3-5cr"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
              await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1384,7 +1384,7 @@ app.post("/chat", async (req, res) => {
           }
 
           else if(i=="5-8cr"||i=="8cr+"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1404,7 +1404,7 @@ app.post("/chat", async (req, res) => {
         else if(rsp == 'central_blr'){
 
           await redis.hset("location",req.body.From,"Central Bangalore");
-          await redis.hset("whatsapp_state",req.body.From,3);
+          //await redis.hset("whatsapp_state",req.body.From,3);
           await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1419,7 +1419,7 @@ app.post("/chat", async (req, res) => {
 
           let i = await redis.hget("budget",req.body.From);
           if(i == "1-3cr"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1429,7 +1429,7 @@ app.post("/chat", async (req, res) => {
 
           }
           else if(i == "3-5cr"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
              await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1440,7 +1440,7 @@ app.post("/chat", async (req, res) => {
           }
 
           else if(i=="5-8cr"||i=="8cr+"){
-            await redis.hset("whatsapp_state",req.body.From,3);
+            //await redis.hset("whatsapp_state",req.body.From,3);
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
@@ -1475,7 +1475,7 @@ app.post("/chat", async (req, res) => {
 
       else{
         await redis.hset("property_chosen",req.body.From,req.body.ListTitle);
-        await redis.hset("whatsapp_state",req.body.From,4);
+        //await redis.hset("whatsapp_state",req.body.From,4);
 
         if(rsp == "brigade"){
 
