@@ -1908,7 +1908,7 @@ app.post("/chat", async (req, res) => {
       await twilioClient.messages.create({
         from: "whatsapp:+14155238886",
         to:formatted_number,
-        contentSid:"HX1b98b707483dd9595a5928a8740c0349",
+        contentSid:"HX506e59f96354970547b6ed9a136ae8ea",
         contentVariables: JSON.stringify({
           "1":Source
         })
