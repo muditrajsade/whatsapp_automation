@@ -1367,7 +1367,7 @@ app.post("/chat", async (req, res) => {
             await twilioClient.messages.create({
             from:req.body.To,
             to:req.body.From,
-            contentSid:"HX18c24ae4c50c799899a564d883d5d019"
+            contentSid:"HX7cc31e238ce53457f4953fffeac1c623"
           });
          
 
